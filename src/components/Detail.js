@@ -7,6 +7,7 @@ const Detail = (props) => {
   const { id } = useParams();
   const [detailData, setDetailData] = useState({});
 
+  // fetch movies data from firebase
   useEffect(() => {
     db.collection("movies")
       .doc(id)
@@ -24,6 +25,7 @@ const Detail = (props) => {
   }, [id]);
 
   return (
+    // sub page to show full data for each movie
     <Container>
       <Background>
         <img alt={detailData.title} src={detailData.backgroundImg} />

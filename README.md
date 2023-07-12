@@ -4,5 +4,5 @@ ALX Webstack - Portfolio Project
 
 ## Project developed by
 
-- Osunkoya Ajibola
 - Ishaya Solomon
+- Osunkoya Ajibola

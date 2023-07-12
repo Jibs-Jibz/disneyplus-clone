@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const Login = (props) => {
   return (
+    // Login dasboard
     <Container>
       <Content>
         <CTA>
@@ -12,8 +13,11 @@ const Login = (props) => {
             with a Disney+ subscription. As of 03/26/21, the price of Disney+
             and The Disney Bundle will increase by $1.
           </Description>
+
           <CTALogoTwo src="/images/cta-logo-two.png" alt="" />
+
         </CTA>
+
         <BgImage />
       </Content>
     </Container>

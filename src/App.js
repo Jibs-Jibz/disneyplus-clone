@@ -8,6 +8,7 @@ import Detail from "./components/Detail";
 function App() {
   return (
     <div className="App">
+      {/* Old routing used */}
       <Router>
         <Header />
         <Switch>

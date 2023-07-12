@@ -20,6 +20,7 @@ const Home = (props) => {
   let trending = [];
 
   useEffect(() => {
+    // fetch movies data from firebase
     console.log("hello");
     db.collection("movies").onSnapshot((snapshot) => {
       snapshot.docs.map((doc) => {
