@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Login = (props) => {
   return (
-    // Login dasboard
+    // Login Dasboard
     <Container>
       <Content>
         <CTA>
