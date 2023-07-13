@@ -9,11 +9,7 @@ const Login = (props) => {
           <CTALogoOne src="/images/cta-logo-one.svg" alt="" />
           <SignUp>GET ALL THERE</SignUp>
           <Description>
-            Get Premier Access to Raya and the Last Dragon for an additional fee
-            with a Disney+ subscription. As of 03/26/21, the price of Disney+
-            and The Disney Bundle will increase by $1.
-          </Description>
-
+            Disney+ is the home for your favorite movies and TV shows from Disney, Pixar, Marvel, Star Wars, and National Geographic. Sign up for Disney+ and start streaming today.</Description>
           <CTALogoTwo src="/images/cta-logo-two.png" alt="" />
 
         </CTA>
@@ -64,6 +60,7 @@ const CTA = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 const CTALogoOne = styled.img`
@@ -79,17 +76,24 @@ const SignUp = styled.a`
   color: #f9f9f9;
   background-color: #0063e5;
   margin-bottom: 12px;
-  width: 100%;
+  width: 80%;
   letter-spacing: 1.5px;
   font-size: 18px;
   padding: 16.5px 0;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 14px;
 
   &:hover {
     background-color: #0483ee;
   }
+
+  @media (max-width: 800px) {
+    padding: 10px 0;
+    font-size: 16px;
+  width: 50%;
+  }
 `;
+
 
 const Description = styled.p`
   color: hsla(0, 0%, 95.3%, 1);

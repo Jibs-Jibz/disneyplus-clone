@@ -10,7 +10,7 @@ import {
   setSignOutState,
 } from "../features/user/userSlice";
 
-const Header = (props) => {
+const Header = (props,) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const userName = useSelector(selectUserName);
@@ -82,43 +82,39 @@ const Header = (props) => {
 
       {isMobile ? (
         <>
-          <HamburgerButton onClick={toggleMenu}>
-            <HamburgerIcon src="/images/hamburger-icon.svg" alt="Menu" />
-          </HamburgerButton>
-          {menuOpen && (
-            <MobileMenu>
-              <a href="/home">
-                <img src="/images/home-icon.svg" alt="HOME" />
-                <span>HOME</span>
-              </a>
-              <a>
-                <img src="/images/search-icon.svg" alt="SEARCH" />
-                <span>SEARCH</span>
-              </a>
-              <a>
-                <img src="/images/watchlist-icon.svg" alt="WATCHLIST" />
-                <span>WATCHLIST</span>
-              </a>
-              <a>
-                <img src="/images/original-icon.svg" alt="ORIGINALS" />
-                <span>ORIGINALS</span>
-              </a>
-              <a>
-                <img src="/images/movie-icon.svg" alt="MOVIES" />
-                <span>MOVIES</span>
-              </a>
-              <a>
-                <img src="/images/series-icon.svg" alt="SERIES" />
-                <span>SERIES</span>
-              </a>
-              <SignOut>
-                <UserImg src={userPhoto} alt={userName} />
-                <DropDown>
-                  <span onClick={handleAuth}>Sign out</span>
-                </DropDown>
-              </SignOut>
-            </MobileMenu>
-          )}
+          {!userName ? (<Login onClick={handleAuth}>Login</Login>)
+            :
+            (
+              <>
+                <HamburgerButton onClick={toggleMenu}>
+                  <HamburgerIcon src="/images/hamburger-icon.svg" alt="Menu" />
+                </HamburgerButton>
+                {menuOpen && (
+                  <MobileMenu>
+                    <a href="/home">
+                      <img src="/images/home-icon.svg" alt="HOME" />
+                      <span>HOME</span>
+                    </a>
+                    <a>
+                      <img src="/images/search-icon.svg" alt="SEARCH" />
+                      <span>SEARCH</span>
+                    </a>
+                    <a>
+                      <img src="/images/watchlist-icon.svg" alt="WATCHLIST" />
+                      <span>WATCHLIST</span>
+                    </a>
+                    <SignOut>
+                      <UserImg src={userPhoto} alt={userName} />
+                      <DropDown>
+                        <span onClick={handleAuth}>Sign out</span>
+                      </DropDown>
+                    </SignOut>
+                  </MobileMenu>
+                )}
+
+              </>
+            )
+          } {/* Add this line */}
         </>
       ) : (
         <>
@@ -138,18 +134,6 @@ const Header = (props) => {
                 <a>
                   <img src="/images/watchlist-icon.svg" alt="WATCHLIST" />
                   <span>WATCHLIST</span>
-                </a>
-                <a>
-                  <img src="/images/original-icon.svg" alt="ORIGINALS" />
-                  <span>ORIGINALS</span>
-                </a>
-                <a>
-                  <img src="/images/movie-icon.svg" alt="MOVIES" />
-                  <span>MOVIES</span>
-                </a>
-                <a>
-                  <img src="/images/series-icon.svg" alt="SERIES" />
-                  <span>SERIES</span>
                 </a>
               </NavMenu>
               <SignOut>
